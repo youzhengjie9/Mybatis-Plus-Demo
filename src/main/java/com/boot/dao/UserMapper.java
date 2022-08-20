@@ -1,4 +1,5 @@
 package com.boot.dao;
+import java.util.Collection;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -25,5 +26,6 @@ public interface UserMapper extends BaseMapper<User> {
     Page<User> selectPageVo(@Param("page") Page<User> page, @Param("age") Integer age);
 
 
+    int insertBatch(@Param("userCollection") Collection<User> userCollection);
 
 }

@@ -9,4 +9,15 @@
         select * from t_user where age=#{age}
     </select>
 
+
+    <insert id="insertBatch">
+        insert into t_user(uid,username,age,
+        email,is_deleted)
+        values
+        <foreach collection="userCollection" item="item" separator=",">
+            (#{item.uid,jdbcType=NUMERIC},#{item.name,jdbcType=VARCHAR},#{item.age,jdbcType=NUMERIC},
+            #{item.email,jdbcType=VARCHAR},#{item.isDeleted})
+        </foreach>
+    </insert>
+
 </mapper>
