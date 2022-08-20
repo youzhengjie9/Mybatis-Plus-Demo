@@ -6,7 +6,11 @@
 
     <groupId>org.example</groupId>
     <artifactId>Mybatis-Plus-Demo</artifactId>
+    <packaging>pom</packaging>
     <version>v1.0.0</version>
+    <modules>
+        <module>../../mybatis-plus-generator</module>
+    </modules>
 
     <properties>
         <!--        springboot版本-->
@@ -54,6 +58,20 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.5.2</version>
         </dependency>
+
+<!--        mybatis-plus代码生成器-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.5.2</version>
+        </dependency>
+<!--       freemarker依赖 （mybatis-plus指定freemarker引擎时一定要引入这个依赖，不然会报错） -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.31</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.alibaba</groupId>
